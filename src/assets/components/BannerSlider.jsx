@@ -1,5 +1,4 @@
 import React from "react";
-import "./BannerSlide.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -7,7 +6,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
+import "./Swiper.css"
 
 import BannerSlider1 from "../images/BnnerSlider/1.jpg";
 import BannerSlider2 from "../images/BnnerSlider/2.jpg";
@@ -16,46 +16,50 @@ import BannerSlider4 from "../images/BnnerSlider/4.jpg";
 
 const BannerSlider = () => {
   return (
-    <div className="h-[250px] md:h-[500px] relative">
+    <div className="overflow-hidden relative">
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
+        autoplay={{
+          delay: 2500,
+        }}
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
-        className="mySwiper"
+        modules={[Pagination, Autoplay]}
+        className="md:mySwiper "
       >
-        <SwiperSlide >
+        <SwiperSlide className="BannerSlider max-h-[500px]">
           <img
             src={BannerSlider1}
             alt="Bannerslider1"
-            className="w-full h-full"
+            className=" w-full h-fit object-fill"
           />
         </SwiperSlide>
-        <SwiperSlide >
+        <SwiperSlide className="BannerSlider max-h-[500px]">
           <img
             src={BannerSlider2}
             alt="Bannerslider1"
-            className="w-full h-full"
+            className=" w-full h-fit object-fill"
           />
         </SwiperSlide>
-        <SwiperSlide >
+        <SwiperSlide className="BannerSlider max-h-[500px]">
           <img
             src={BannerSlider3}
             alt="Bannerslider1"
-            className="w-full h-full"
+            className=" w-full h-fit object-fill"
           />
         </SwiperSlide>
-        <SwiperSlide >
+        <SwiperSlide className="BannerSlider max-h-[500px]">
           <img
             src={BannerSlider4}
             alt="Bannerslider1"
-            className="w-full h-full"
+            className=" w-full h-fit object-fill"
           />
         </SwiperSlide>
+        
+        
       </Swiper>
-      <div className="absolute bottom-0 w-full left-0 z-10 h-[40px] bg-gradient-to-b from-transparent to-headingColor"></div>
     </div>
   );
 };

@@ -105,30 +105,30 @@ const Header = () => {
       )}
       {/* { dropdown } */}
       {
-        dropDownMenu ? <div className="fixed top-16 w-[500px] lg:flex left-32 bg-headerColor rounded-xl shadow-lg p-5 items-center justify-between hidden" data-aos="fade-up" data-aos-duration="700">
+        dropDownMenu ? <div className="absolute top-16 w-[500px] lg:flex left-32 bg-headerColor rounded-xl shadow-lg p-5 items-center justify-between hidden" data-aos="fade-up" data-aos-duration="700">
         <ul className="flex-col flex items-start justify-around gap-4">
-          <h5 className="text-primaryColor  font-medium">Mens</h5>
+          <h5 className="text-primaryColor  font-bold">Mens</h5>
           <li>Casual</li>
           <li>Business</li>
           <li>Formal</li>
           <li>Jacket</li>
         </ul>
         <ul className="flex-col flex items-start justify-around gap-4">
-          <h5 className="text-primaryColor  font-medium">Womens</h5>
+          <h5 className="text-primaryColor  font-bold">Womens</h5>
           <li>Midi Dress</li>
           <li>Denim Dress</li>
           <li>Sweater Dress</li>
           <li>Maxi Dress</li>
         </ul>
         <ul className="flex-col flex items-start justify-around gap-4">
-          <h5 className="text-primaryColor  font-medium">Jewelery</h5>
+          <h5 className="text-primaryColor  font-bold">Jewelery</h5>
           <li>Earring</li>
           <li>Gold</li>
           <li>Rings</li>
           <li>Necklace</li>
         </ul>
         <ul className="flex-col flex items-start justify-around gap-4">
-          <h5 className="text-primaryColor  font-medium">Electronics</h5>
+          <h5 className="text-primaryColor  font-bold">Electronics</h5>
           <li>Laptops</li>
           <li>Mouse</li>
           <li>Keyboard</li>

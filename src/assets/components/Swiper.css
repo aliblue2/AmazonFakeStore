@@ -1,0 +1,44 @@
+/* Bannner Slider css */
+
+.mySwiper {
+    width: 100%;
+    height: 400px;
+  }
+  
+  .BannerSlider {
+    text-align: center;
+    font-size: 18px;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .BannerSlider img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* End Of Banner SliderCss */
+
+
+  .ProductSwiper .productSlide{
+    padding: 2px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .ProductSwiper .productSlide img{
+    height: 120px;
+    padding: 5px;
+    background: #ddd;
+    width: 100%;
+    mix-blend-mode: multiply;
+    border-radius: 5px;
+    object-fit: scale-down;
+  }
