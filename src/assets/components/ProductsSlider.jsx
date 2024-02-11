@@ -28,7 +28,7 @@ const ProductsSlider = () => {
   }, []);
   console.log(products);
   return (
-    <div className="w-full h-full my-12 flex gap-5 items-center bg-primaryColor p-5">
+    <div className="w-full h-full my-12 flex gap-5 items-center bg-gradient-to-r from-primaryColor to-blue-700 py-12">
       <Swiper
         slidesPerView={2.5}
         spaceBetween={10}
@@ -51,16 +51,14 @@ const ProductsSlider = () => {
         }}
         className="ProductSwiper"
       >
-        <SwiperSlide
-          className="flex flex-col items-center justify-center h-[300px] gap-5"
-        >
+        <SwiperSlide className="flex flex-col items-center justify-center h-[300px] gap-5">
           <img src={OfferImg} alt="OfferLogo" className="max-w-[120px]" />
           <h4 className="md:text-xl text-lg font-bold text-headingColor">
             Top Our Products
           </h4>
-          <button className="bg-headerColor hover:bg-headingColor transition-colors duration-300 text-primaryColor p-1 px-4 rounded-md">
-            See All products
-          </button>
+          <a href="#" className="text-headingColor underline">
+            see all products
+          </a>
         </SwiperSlide>
         {products.slice(0, 10).map((product) => {
           return (
@@ -69,29 +67,24 @@ const ProductsSlider = () => {
               key={product.id}
             >
               <img src={product.image} alt="" />
-              <div className="flex flex-col items-start w-full gap-2 p-2">
-                <h5 className="text-lg text-primaryColor font-medium">
-                  {product.title.slice(0,12)}
-                </h5>
-                <p className="text-primaryColor text-sm">
+              <div className="w-full h-[220px] mt-2 relative flex flex-col items-start justify-start gap-2">
+                <h3 className="md:text-xl text-lg font-medium pl-2">
+                  {product.title.slice(0,10)}
+                </h3>
+                <p className="text-primaryColor text-sm pl-2 w-full">
                   {product.description.slice(0,35)}
                 </p>
-                <span className="text-gray-600 bg-gray-200 px-2 rounded-md' text-xs">
+                <span className="text-gray-600 bg-gray-200 ml-2 px-2 text-sm rounded-md">
                   {product.category}
                 </span>
-                <div className="flex items-center justify-start gap-2">
-                  <span className="text-primaryColor text-sm">
-                    Rate : {product.rating.rate}
-                  </span>
-                  <span className="text-sm text-primaryColor">
-                   ({product.rating.count})
-                  </span>
-                </div>
-                <h3 className="text-primaryColor font-bold text-xl">
+                <span className="text-primaryColor text-sm pl-2">
+                  Rate : {product.rating.rate}
+                </span>
+                <h4 className="text-primaryColor font-bold text-lg pl-2">
                   {product.price.toLocaleString('en-US') + " $"}
-                </h3>
-                <button className="w-full py-1 px-4 transition-colors duration-300 rounded-md bg-primaryColor text-headingColor font-medium group-hover:bg-blue-700 ">
-                  Add To Cart
+                </h4>
+                <button className="w-full group-hover:bg-blue-700 transition-colors duration-700 rounded-md py-1 text-headingColor bg-primaryColor absolute bottom-[2px]">
+                  Add to Cart
                 </button>
               </div>
             </SwiperSlide>
