@@ -52,7 +52,7 @@ const ProductsSlider = () => {
         className="ProductSwiper"
       >
         <SwiperSlide
-          className="flex flex-col items-center justify-center h-[300px] gap-2"
+          className="flex flex-col items-center justify-center h-[300px] gap-5"
         >
           <img src={OfferImg} alt="OfferLogo" className="max-w-[120px]" />
           <h4 className="md:text-xl text-lg font-bold text-headingColor">
@@ -74,7 +74,7 @@ const ProductsSlider = () => {
                   {product.title.slice(0,12)}
                 </h5>
                 <p className="text-primaryColor text-sm">
-                  {product.description.slice(0,38)}
+                  {product.description.slice(0,35)}
                 </p>
                 <span className="text-gray-600 bg-gray-200 px-2 rounded-md' text-xs">
                   {product.category}
