@@ -13,7 +13,12 @@ import OfferImg from "../images/CaImages/offer.png";
 const ProductsSlider = () => {
   const baseUrl = "https://fakestoreapi.com/products";
   const [products, setProducts] = useState([]);
-
+  const [count , setCount] = useState(5);
+  const changeCountHandler = () => {
+    setCount((prevValue) => {
+      return prevValue += 5;
+    })
+  }
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -41,15 +46,15 @@ const ProductsSlider = () => {
             spaceBetween: 10,
           },
           768: {
-            slidesPerView: 5,
+            slidesPerView: 5.5,
             spaceBetween: 10,
           },
           1024: {
-            slidesPerView: 6,
-            spaceBetween: 30,
+            slidesPerView: 6.5,
+            spaceBetween: 20,
           },
         }}
-        className="ProductSwiper"
+        className="ProductSwiper px-5"
       >
         <SwiperSlide className="flex flex-col items-center justify-center h-[300px] gap-5">
           <img src={OfferImg} alt="OfferLogo" className="max-w-[120px]" />
@@ -60,7 +65,7 @@ const ProductsSlider = () => {
             see all products
           </a>
         </SwiperSlide>
-        {products.slice(0, 10).map((product) => {
+        {products.slice(0, count).map((product) => {
           return (
             <SwiperSlide
               className="productSlide rounded-lg bg-headerColor hover:bg-[#ccc] hover:cursor-pointer transition-all ease-in-out duration-300 group"
@@ -90,6 +95,9 @@ const ProductsSlider = () => {
             </SwiperSlide>
           );
         })}
+        <SwiperSlide className="bg-headingColor flex h-[350px] rounded-lg flex-col items-center justify-center gap-5 cursor-pointer" onClick={changeCountHandler}>
+        See More Products 
+        </SwiperSlide>
       </Swiper>
     </div>
   );

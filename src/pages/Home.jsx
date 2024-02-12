@@ -7,6 +7,7 @@ import BannerSlider from '../assets/components/BannerSlider'
 import Categories from '../assets/components/Categories'
 import PreHeader from '../assets/components/PreHeader'
 import ProductsSlider from '../assets/components/ProductsSlider'
+import ElectronicsProducts from '../assets/components/ElectronicsProducts'
 const Home = () => {
   useEffect(() => {
     Aos.init()
@@ -18,6 +19,7 @@ const Home = () => {
       <BannerSlider />
       <Categories />
       <ProductsSlider />
+      <ElectronicsProducts />
       <Footer />
     </div>
   )

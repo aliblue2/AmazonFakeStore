@@ -1,44 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CatImage2 from "../images/CaImages/dress.png";
-import CatImage3 from "../images/CaImages/electronics.png";
 import CatImage4 from "../images/CaImages/jewelery.png";
+import axios from "axios";
 const Categories = () => {
+  const CategiriesUrl = "https://fakestoreapi.com/products/categories";
+  const [categoriesArr, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get(CategiriesUrl);
+        setCategories(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchCategories();
+  }, []);
+
   return (
-    <div className="my-12">
-      <h2 className="text-xl font-bold text-primaryColor text-center my-5">
+    <div className="my-5 p-2">
+      <h5 className="text-2xl font-medium text-center">
         Categories
-      </h2>
-      <div className="max-w-[1200px] mx-auto px-5 grid gap-5 grid-cols-3">
-        <div className="flex flex-col items-center justify-center gap-5">
-          <img
-            src={CatImage2}
-            alt="Products Styles"
-            className="max-w-[120px]"
-          />
-          <h3 className="text-primaryColor md:text-xl text-center font-medium">
-            Styles Products
-          </h3>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-5">
-          <img
-            src={CatImage3}
-            alt="Digital Producs"
-            className="max-w-[120px]"
-          />
-          <h3 className="text-primaryColor md:text-xl text-center font-medium">
-            Digital Producs
-          </h3>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-5">
-          <img
-            src={CatImage4}
-            alt="Jewellery Products"
-            className="max-w-[120px]"
-          />
-          <h3 className="text-primaryColor md:text-xl text-center font-medium">
-            Jewellery Products
-          </h3>
-        </div>
+      </h5>
+      <div className="flex items-center w-full justify-center gap-5 mt-5">
+        {
+          categoriesArr.map((cat) => {
+            return <span className="text-primaryColor bg-headerColor p-2 rounded-md shadow-md md:text-xl md:font-medium truncate w-[120px] text-center" key={cat}>{cat}</span>
+          })
+        }
       </div>
     </div>
   );

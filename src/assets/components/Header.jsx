@@ -3,6 +3,7 @@ import Logo from "../images/logo.png";
 import LogoSm from "../images/logosm.png";
 import { Link } from "react-router-dom";
 import {
+  RiBloggerLine,
   RiCloseLine,
   RiGalleryFill,
   RiHome3Line,
