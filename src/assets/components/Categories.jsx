@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import CatImage2 from "../images/CaImages/dress.png";
-import CatImage4 from "../images/CaImages/jewelery.png";
 import axios from "axios";
 const Categories = () => {
   const CategiriesUrl = "https://fakestoreapi.com/products/categories";

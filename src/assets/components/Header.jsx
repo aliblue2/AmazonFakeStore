@@ -32,15 +32,15 @@ const Header = () => {
       <div className="flex items-center gap-8 justify-start">
         <img src={Logo} alt="logo" className="max-w-[110px] " />
         <li
-          className={dropDownMenu ? "py-1 px-2 text-lg font-medium items-center gap-1 bg-headingColor rounded-md lg:flex hidden" : "py-1 px-2 text-lg font-medium items-center gap-1 hover:bg-headingColor transition-colors duration-300 rounded-md lg:flex hidden"}
+          className={dropDownMenu ? "py-1 px-2 text-lg font-medium items-center gap-1 bg-headingColor rounded-md lg:flex hidden cursor-pointer" : "py-1 px-2 text-lg font-medium items-center gap-1 hover:bg-headingColor transition-colors duration-300 rounded-md lg:flex hidden cursor-pointer"}
           on
         >
           <RiListIndefinite size={20} />
-          <Link
+          <span 
             onClick={showingDropDownHandler}
           >
             Category
-          </Link>
+          </span>
         </li>
         <div className="md:flex hidden items-center justify-start gap-3 bg-headingColor p-1 rounded-md">
           <RiSearch2Line size={24} />
