@@ -9,6 +9,8 @@ import PreHeader from '../assets/components/PreHeader'
 import ProductsSlider from '../assets/components/ProductsSlider'
 import ElectronicsProducts from '../assets/components/ElectronicsProducts'
 import JewellerySec from '../assets/components/JewellerySec'
+import MensProductSec from '../assets/components/MensProductSec'
+import WomensProductSec from '../assets/components/WomensProductSec'
 const Home = () => {
   useEffect(() => {
     Aos.init()
@@ -22,6 +24,8 @@ const Home = () => {
       <ProductsSlider />
       <ElectronicsProducts />
       <JewellerySec />
+      <MensProductSec />
+      <WomensProductSec />
       <Footer />
     </div>
   )

@@ -6,6 +6,7 @@ import Account from "./pages/Account"
 import Cart from "./pages/Cart"
 import Login from "./pages/Login"
 import "./index.css";
+import ProductInfo from "./pages/ProductInfo";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <HashRouter>
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Route element={<Account />} path={"/acoount"} />
     <Route element={<Cart />} path={"/cart"} />
     <Route element={<Login />} path={"/login"} />
+    <Route element={<ProductInfo />} path={"/:product"} />
   </Routes>
   </HashRouter>
 );

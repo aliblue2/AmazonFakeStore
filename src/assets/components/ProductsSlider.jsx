@@ -10,7 +10,9 @@ import "./Swiper.css";
 // import axios
 import axios from "axios";
 import OfferImg from "../images/CaImages/offer.png";
+import { useNavigate } from "react-router-dom";
 const ProductsSlider = () => {
+  const navigator = useNavigate()
   const baseUrl = "https://fakestoreapi.com/products";
   const [products, setProducts] = useState([]);
   const [count , setCount] = useState(5);
@@ -31,7 +33,12 @@ const ProductsSlider = () => {
 
     fetchProducts();
   }, []);
-  console.log(products);
+
+  const onProductInfo = (product) => {
+    navigator(`/:product${product.title.replace(" " , "?").slice(0,10).toLowerCase()}` , {
+      state : product
+    })
+  }
   return (
     <div className="w-full h-full my-12 flex gap-5 items-center bg-gradient-to-r from-primaryColor to-blue-700 py-12">
       <Swiper
@@ -68,6 +75,7 @@ const ProductsSlider = () => {
         {products.slice(0, count).map((product) => {
           return (
             <SwiperSlide
+            onClick={() => onProductInfo(product)}
               className="productSlide rounded-lg bg-headerColor hover:bg-[#ccc] hover:cursor-pointer transition-all ease-in-out duration-300 group"
               key={product.id}
             >

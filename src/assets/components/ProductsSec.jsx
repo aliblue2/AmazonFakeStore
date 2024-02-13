@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-const ProductsSec = ({ url}) => {
+import { useNavigate } from "react-router-dom";
+const ProductsSec = ({ url }) => {
+  const navigator = useNavigate();
   const [products, setProducts] = useState([]);
   const BaseURL = `https://fakestoreapi.com/products/category/${url}`;
   useEffect(() => {
@@ -11,6 +13,12 @@ const ProductsSec = ({ url}) => {
 
     fetchEProducts();
   }, []);
+  const productInfoHandler = (product) => {
+    
+    navigator(`/:product${product.title.replace(" " , "?").slice(0,10).toLowerCase()}`, {
+      state: product,
+    });
+  };
   return (
     <div className="grid grid-cols-2 lg:grid-cols-5 md:grid-cols-4 gap-5 mt-5 px-2">
       {products.map((product) => {
@@ -18,6 +26,7 @@ const ProductsSec = ({ url}) => {
           <div
             className="bg-headerColor group transition-colors duration-300 hover:bg-[#ccc] h-[410px] md:h-96 p-[2px] relative shadow-md rounded-lg overflow-hidden cursor-pointer"
             key={product.id}
+            onClick={() => productInfoHandler(product)}
           >
             <img
               src={product.image}
